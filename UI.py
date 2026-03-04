@@ -238,8 +238,8 @@ class ClueUI(tk.Tk):
                     self.canvas.create_text(
                         x1 + self.TILE / 2,
                         y1 + self.TILE / 2,
-                        text=room[0],
-                        font=("Segoe UI", 10, "bold"),
+                        text=room,
+                        font=("Segoe UI", 7, "bold"),
                         fill="#111",
                     )
 
