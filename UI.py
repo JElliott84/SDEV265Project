@@ -238,8 +238,8 @@ class ClueUI(tk.Tk):
                     self.canvas.create_text(
                         x1 + self.TILE / 2,
                         y1 + self.TILE / 2,
-                        text=room,
-                        font=("Segoe UI", 7, "bold"),
+                        text=room,                        # Original: text=room[0]
+                        font=("Segoe UI", 7, "bold"),     # Changed font size from 10 to 7
                         fill="#111",
                     )
 
@@ -381,7 +381,8 @@ class SuggestAccuseDialog(tk.Toplevel):
         self.title(title)
         self.resizable(False, False)
         self.transient(parent)
-        self.grab_set()
+        #self.grab_set()          Replaced with self.focus() below
+        self.focus()            # Replaced self.grab_set() with self.focus() to allow notepad use while suggestion/accusation window is open
         self.result = None
 
         pad = 12
